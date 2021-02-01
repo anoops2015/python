@@ -1,0 +1,32 @@
+
+[data-form="captcha-mailer"] .d-on-success {
+    display: none; }
+
+.dropdown-item {
+    color: #555;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+    /*color: #16181b;*/
+    color: #323d47;
+}
+
+.screenshot-result {
+    border: 1px solid rgba(0, 0, 0, 0.07);
+}
+.screenshot-result:hover {
+    -webkit-box-shadow: 0 1px 35px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 1px 35px rgba(0, 0, 0, 0.07);
+}
+
+.form-control {
+    color: #323d47;
+}
+
+.btnGoogleSignIn {
+    width: 191px;
+    height:46px;
+    background:transparent url('../img/btn_google_signin_dark_normal_web.png') center top no-repeat;
+}
+.btnGoogleSignIn:hover, .btnGoogleSignIn:active {
+    background-image: url('../img/btn_google_signin_dark_focus_web.png');
+}

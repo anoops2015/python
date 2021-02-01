@@ -24,11 +24,11 @@ def home(request):
             driver.get(url)
             driver.set_window_size(width, height)
             name = uuid.uuid4()
-            driver.save_screenshot(f"static/screenshots/{name}.png")
+            driver.save_screenshot(f"staticfiles/screenshots/{name}.png")
             driver.quit()
 
             context = {}
-            context['download_path'] = f'static/screenshots/{name}.png'
+            context['download_path'] = f'staticfiles/screenshots/{name}.png'
             context['form'] = ScreenshotForm()
             return render(request, 'screenshot/home.html', context)
         context = {}
