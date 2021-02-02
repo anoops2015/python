@@ -14,6 +14,7 @@ def home(request):
     else:
         form = ScreenshotForm(request.POST)
         if form.is_valid():
+            # Uncomment this if you need to use a virtual screen on servers
             with Display():
                 url = form.cleaned_data.get('target_url')
                 height = form.cleaned_data.get('height')
@@ -23,6 +24,7 @@ def home(request):
                 chrome_options.add_argument('--headless')
                 chrome_options.add_argument('--start-maximized')
                 driver = webdriver.Firefox()
+                # driver = webdriver.Chrome(chrome_options=chrome_options)
                 driver.get(url)
                 driver.set_window_size(width, height)
                 name = uuid.uuid4()
@@ -31,7 +33,7 @@ def home(request):
                 driver.quit()
 
                 context = {}
-                context['download_path'] = f'staticfiles/screenshots/{name}.png'
+                context['download_path'] = f'static/screenshots/{name}.png'
                 context['imgtext'] = x
                 context['form'] = ScreenshotForm()
                 return render(request, 'screenshot/home.html', context)

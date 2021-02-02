@@ -82,8 +82,14 @@
                 </div>
 
                 <div class="col-lg-6 ml-auto mt-1 d-none d-lg-block d-xl-block">
-                    <img class="mt-0 img-fluid" src="{% static 'assets/img/hero-img.png' %}" alt="mainrobot"
-                        title="YES, that's me, THE ROBOT MACHINE.">
+                    <h3>Scroll down to download</h3>
+                    {% if imgtext %}
+                    <img class="mt-0 img-fluid" src="data:image/png;base64,{{ imgtext }}" alt=""
+                    title="">
+                    {% else %}
+                    <img class="mt-0 img-fluid" src="{% static 'assets/img/hero-img.png' %}" alt=""
+                        title="">
+                    {% endif %}
                 </div>
             </div>
         </div>
