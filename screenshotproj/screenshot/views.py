@@ -26,11 +26,13 @@ def home(request):
                 driver.get(url)
                 driver.set_window_size(width, height)
                 name = uuid.uuid4()
+                x=driver.get_screenshot_as_base64()
                 driver.save_screenshot(f"/home/BeneettaRose/web2img/screenshotproj/staticfiles/screenshots/{name}.png")
                 driver.quit()
 
                 context = {}
                 context['download_path'] = f'staticfiles/screenshots/{name}.png'
+                context['imgtext'] = x
                 context['form'] = ScreenshotForm()
                 return render(request, 'screenshot/home.html', context)
         context = {}
