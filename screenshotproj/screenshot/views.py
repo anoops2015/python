@@ -26,7 +26,7 @@ def home(request):
                 driver.get(url)
                 driver.set_window_size(width, height)
                 name = uuid.uuid4()
-                driver.save_screenshot(f"staticfiles/screenshots/{name}.png")
+                driver.save_screenshot(f"/home/BeneettaRose/web2img/screenshotproj/staticfiles/screenshots/{name}.png")
                 driver.quit()
 
                 context = {}
